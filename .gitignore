@@ -20,7 +20,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # Build files
-dist/
+# dist/  # Commented out to allow committing dist folder
 
 # Additional files
 *.log
