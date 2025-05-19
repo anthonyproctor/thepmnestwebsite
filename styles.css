@@ -358,7 +358,8 @@ main {
   display: flex;
   justify-content: center;
   gap: 12px;
-  margin-top: 40px;
+  margin-top: 20px;
+  text-align: center;
 }
 
 .testimonial-dot {
@@ -433,39 +434,35 @@ main {
 
 /* Client Logos Section */
 .client-logos {
-  background: #fff;
-  width: 100%;
-  padding: 60px 0 80px 0; /* Padding for the section */
+  background-color: #fff;
+  padding: 80px 24px;
   text-align: center;
 }
 
 .client-logos .section-title {
-    margin-bottom: 40px; /* Margin below title */
-    color: #0e2942;
+  margin-bottom: 40px;
 }
 
 .logo-grid {
-  display: flex;
-  justify-content: center; /* Center logos */
-  flex-wrap: wrap; /* Allow logos to wrap on smaller screens */
-  gap: 40px; /* Space between logos */
-  max-width: 1200px; /* Limit width of the logo grid */
-  margin: 0 auto; /* Center the grid */
-  padding: 0 24px; /* Horizontal padding */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 40px;
+  justify-items: center;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .logo-grid img {
   display: block;
-  height: 50px; /* Set a fixed height for logos */
-  width: auto; /* Maintain aspect ratio */
-  opacity: 0.7; /* Subtle opacity */
-  filter: grayscale(100%); /* Grayscale effect */
-  transition: opacity 0.3s, filter 0.3s;
+  max-width: 100%;
+  height: auto;
+  filter: grayscale(100%) opacity(60%);
+  transition: filter 0.3s ease;
 }
 
 .logo-grid img:hover {
-  opacity: 1; /* Full opacity on hover */
-  filter: grayscale(0%); /* Color on hover */
+  filter: grayscale(0%) opacity(100%);
 }
 
 /* Responsive adjustments */
