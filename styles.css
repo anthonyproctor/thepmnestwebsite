@@ -894,6 +894,8 @@ td:not(:first-child) {
     padding: 80px 0;
     background: #f7f4ef;
     width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .special-offerings .section-title {
@@ -901,22 +903,32 @@ td:not(:first-child) {
 }
 
 .offerings-grid {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: repeat(auto-fit, minmax(280px, 1fr));
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 32px;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 24px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .offering-card {
     background: white;
     padding: 32px;
     border-radius: 16px;
+    -webkit-box-shadow: 0 4px 20px rgba(15,29,46,0.1);
     box-shadow: 0 4px 20px rgba(15,29,46,0.1);
+    -webkit-transition: -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
     transition: transform 0.3s, box-shadow 0.3s;
     position: relative;
     overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 .offering-card::before {
@@ -928,7 +940,10 @@ td:not(:first-child) {
     height: 6px;
     background-color: #d4af37;
     opacity: 0.7;
+    -webkit-transition: height 0.3s ease-out, opacity 0.3s ease-out;
     transition: height 0.3s ease-out, opacity 0.3s ease-out;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 .offering-card:hover::before {
@@ -937,7 +952,9 @@ td:not(:first-child) {
 }
 
 .offering-card:hover {
+    -webkit-transform: translateY(-10px) scale(1.03);
     transform: translateY(-10px) scale(1.03);
+    -webkit-box-shadow: 0 10px 40px rgba(15,29,46,0.18);
     box-shadow: 0 10px 40px rgba(15,29,46,0.18);
 }
 
@@ -947,6 +964,8 @@ td:not(:first-child) {
     font-size: 1.4rem;
     position: relative;
     z-index: 2;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .offering-card p {
@@ -955,10 +974,13 @@ td:not(:first-child) {
     font-size: 1.05rem;
     position: relative;
     z-index: 2;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 @media (max-width: 900px) {
     .offerings-grid {
+        -ms-grid-columns: repeat(auto-fit, minmax(250px, 1fr));
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 24px;
         padding: 0 16px;
@@ -975,6 +997,7 @@ td:not(:first-child) {
     }
     
     .offerings-grid {
+        -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
         gap: 16px;
         padding: 0 8px;
